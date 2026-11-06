@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical"
+    android:fitsSystemWindows="true" android:background="?attr/colorSurface">
+    <com.google.android.material.appbar.MaterialToolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" app:title="@string/results_statistics" app:navigationIcon="@drawable/ic_back" />
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
+            <TextView android:id="@+id/quizTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="?attr/textAppearanceHeadlineSmall" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="16dp">
+                <TextView android:id="@+id/attemptsValue" style="@style/StatBox" />
+                <TextView android:id="@+id/averageValue" style="@style/StatBox" android:layout_marginHorizontal="8dp" />
+                <TextView android:id="@+id/passRateValue" style="@style/StatBox" />
+            </LinearLayout>
+            <com.google.android.material.button.MaterialButton android:id="@+id/editQuizButton" style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent" android:layout_height="52dp" android:layout_marginTop="16dp" android:text="@string/edit_quiz" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/student_attempts" android:textAppearance="?attr/textAppearanceTitleMedium" />
+            <LinearLayout android:id="@+id/attemptContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="8dp" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/per_question" android:textAppearance="?attr/textAppearanceTitleMedium" />
+            <LinearLayout android:id="@+id/statContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="8dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

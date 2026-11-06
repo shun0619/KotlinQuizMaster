@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Needed to load Google Map tiles. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Let the app find dialer, email and browser apps on Android 11+. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.DIAL" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SENDTO" />
+            <data android:scheme="mailto" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.KotlinQuizMaster">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+
+        <activity
+            android:name=".ui.auth.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.auth.LoginActivity" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ui.auth.SignUpActivity" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ui.admin.AdminActivity" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ui.instructor.InstructorHomeActivity" />
+        <activity android:name=".ui.instructor.QuizEditorActivity" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ui.instructor.StatisticsActivity" />
+        <activity android:name=".ui.student.StudentHomeActivity" />
+        <activity android:name=".ui.student.QuizActivity" />
+        <activity android:name=".ui.student.ResultActivity" />
+    </application>
+
+</manifest>

@@ -1,0 +1,6 @@
+<resources>
+    <!-- Light theme only, so the custom light backgrounds stay readable. -->
+    <style name="Base.Theme.KotlinQuizMaster" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">#6750A4</item>
+    </style>
+</resources>
